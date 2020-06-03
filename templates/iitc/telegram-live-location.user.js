@@ -23,7 +23,7 @@ unsafeWindow.telegramLL_getLocationData = function(id, token, callback) {
 
     GM_xmlhttpRequest({
         method: "GET",
-        url: "TAG_BASE_URL/locations.php?id="+id+"&token="+token,
+        url: "https://TAG_HOST/locations.php?id="+id+"&token="+token,
         headers: {"Accept": "application/json"},
         onload: function (response) {
             console.log("We got a response...");
