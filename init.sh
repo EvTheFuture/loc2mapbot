@@ -98,6 +98,7 @@ tag_compact_time="`date +'%H%M'`"
 store_variables
 
 # Make sure all dependencies are installed
+which convert > /dev/null || (echo "The command convert from ImageMagick is not installed. ABORTING..." >&2 && exit 1)
 which composer > /dev/null || (echo "The command composer is not installed. ABORTING..." >&2 && exit 1)
 which mysql > /dev/null || (echo "The command mysql is not installed. ABORTING..." >&2 && exit 1)
 test -x /usr/bin/php || (echo "Unable to find /usr/bin/php. ABORTING..." >&2 && exit 2)
@@ -110,10 +111,10 @@ echo "show create table locations" | mysql -s -u "$tag_dbuser" -p"$tag_dbpass" -
     mysql -s -u "$tag_dbuser" -p"$tag_dbpass" -h "$tag_dbhost" "$tag_dbname" < "${dir}/livelocations.sql"
 
 # Install Telegram library for PHP
-composer require telegram-bot/api || (echo "Something went wrong when installing Telegram API. ABORTING..." >&2 && exit 3)
+composer require telegram-bot/api:2.3.8.0 || (echo "Something went wrong when installing Telegram API. ABORTING..." >&2 && exit 3)
 
 # Create iitc directory if it is missing
-test -d "$dir/www/iirc" || mkdir "$dir/www/iitc"
+test -d "$dir/www/iitc" || mkdir "$dir/www/iitc"
 
 # Copy all files
 prepare_file "${dir}/templates/config.json" "${dir}/config.json"
