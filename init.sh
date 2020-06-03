@@ -112,6 +112,9 @@ echo "show create table locations" | mysql -s -u "$tag_dbuser" -p"$tag_dbpass" -
 # Install Telegram library for PHP
 composer require telegram-bot/api || (echo "Something went wrong when installing Telegram API. ABORTING..." >&2 && exit 3)
 
+# Create iitc directory if it is missing
+test -d "$dir/www/iirc" || mkdir "$dir/www/iitc"
+
 # Copy all files
 prepare_file "${dir}/templates/config.json" "${dir}/config.json"
 prepare_file "${dir}/templates/iitc/telegram-live-location.meta.js" "${dir}/www/iitc/telegram-live-location.meta.js"
