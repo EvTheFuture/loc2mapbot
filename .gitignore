@@ -1,0 +1,6 @@
+www/iitc/*.js
+www/images/*
+vendor
+composer.*
+.vars
+config.json

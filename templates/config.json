@@ -1,0 +1,11 @@
+{
+    "SECRET_SALT": "TAG_SALT",
+    "API_TOKEN": "TAG_TELEGRAM_API_TOKEN",
+    "LOG_FILE": "TAG_LOG_FILE",
+    "DB": {
+        "username": "TAG_DBUSER",
+        "password": "TAG_DBPASS",
+        "dbname": "TAG_DBNAME",
+        "host": "TAG_DBHOST"
+    }
+}
