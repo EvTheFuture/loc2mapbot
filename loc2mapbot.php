@@ -60,7 +60,6 @@ function checkField($tag, $config) {
 
 checkField("SECRET_SALT", $config);
 checkField("API_TOKEN", $config);
-checkField("IMAGES", $config);
 checkField("LOG_FILE", $config);
 checkField("DB", $config);
 checkField("username", $config["DB"]);
@@ -147,8 +146,8 @@ function handleLocation($bot, $message) {
             $photos = $allphotos[$i];
             $photo = end($photos);
             $filename = $photo->getFileId();
-            $destfile = $config["IMAGES"]."$filename.jpg";
-            $iconfile = $config["IMAGES"]."${filename}-icon.png";
+            $destfile = "./www/images/${filename}.jpg";
+            $iconfile = "./www/images/${filename}-icon.png";
 
             if (!file_exists($destfile)) {
                 debug("Trying to get fileId: $filename for user: ".$message->getFrom()->getUsername());
@@ -247,7 +246,7 @@ while (true) {
 
     try {
         $bot = new \TelegramBot\Api\Client($config["API_TOKEN"]);
-        $bot->run();
+//        $bot->run();
 
         while (true) {
             $md5Data = md5Data($data);

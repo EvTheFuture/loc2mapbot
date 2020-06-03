@@ -42,7 +42,6 @@ if ($pw != $calc) {
 } else {
     require_once("../Db.php");
 
-    checkField("IMAGES", $config);
     checkField("DB", $config);
     checkField("username", $config["DB"]);
     checkField("password", $config["DB"]);
@@ -54,7 +53,7 @@ if ($pw != $calc) {
     $id = $db->quote($id);
     $rows = $db->select("SELECT * from locations where gid=$id");
 
-    $dir = str_replace($_SERVER["DOCUMENT_ROOT"], "", $config["IMAGES"]);
+    $dir = "/images/";
     $result["status"] = "OK";
     $result["time"] = time();
     foreach($rows as $row) {
