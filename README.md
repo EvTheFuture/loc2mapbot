@@ -12,7 +12,8 @@ __Requirements__
 
 
 __**** VERY IMPORTANT ****__
-YOU MUST INITIATE ALL CONFIGURATION BY FOLLOWING THESE STEPS
+
+<u>YOU MUST INITILIZE ALL CONFIGURATION BY FOLLOWING THESE STEPS</u>
 
 1. Configure your web server to serve PHP files in ./www/
 
