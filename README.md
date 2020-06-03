@@ -17,13 +17,17 @@ __**** VERY IMPORTANT ****__
 
 1. Configure your web server to serve PHP files in ./www/
 
-2. Create a MariaDb/Mysql database and a valid database user
+2. PHP version must have CURLFile support
 
-3. Create a Telegram Bot in Telegram with help of the bot @BotFather
+3. Make sure the convert command is installed from ImageMagick
 
-4. Run the ./init.sh script to install all required components and setup the configuration
+4. Create a MariaDb/Mysql database and a valid database user
 
-6. Start the bot ./loc2mapbot.php
+5. Create a Telegram Bot in Telegram with help of the bot @BotFather
+
+6. Run the ./init.sh script to install all required components and setup the configuration
+
+7. Start the bot ./loc2mapbot.php
 
 __OPTIONAL:__
 
