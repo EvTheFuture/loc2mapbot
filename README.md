@@ -1,6 +1,16 @@
 # loc2mapbot
 Telegram bot to collect and display Live Locations in IITC
 
+__Requirements__
+* A Working web server with PHP and SSL support
+
+* A MySQL or MariaDB Database
+
+* PHP support in CLI
+
+* A valid certificate for your web server
+
+
 __**** VERY IMPORTANT ****__
 YOU MUST INITIATE ALL CONFIGURATION BY FOLLOWING THESE STEPS
 
