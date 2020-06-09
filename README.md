@@ -8,6 +8,8 @@ __Requirements__
 
 * PHP support in CLI
 
+* PHP Curl (https://www.php.net/manual/en/class.curlfile.php)
+
 * A valid certificate for your web server
 
 

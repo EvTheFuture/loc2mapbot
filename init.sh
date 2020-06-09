@@ -102,6 +102,7 @@ which convert > /dev/null || (echo "The command convert from ImageMagick is not 
 which composer > /dev/null || (echo "The command composer is not installed. ABORTING..." >&2 && exit 1)
 which mysql > /dev/null || (echo "The command mysql is not installed. ABORTING..." >&2 && exit 1)
 test -x /usr/bin/php || (echo "Unable to find /usr/bin/php. ABORTING..." >&2 && exit 2)
+echo "<?php new CURLFile('/dev/null'); ?>" | /usr/bin/php > /dev/null 2>&1 || (echo "PHP-curl is not installed, ABORTING..."; exit 4)
 
 # Test database connection
 echo exit | mysql -u "$tag_dbuser" -p"$tag_dbpass" -h "$tag_dbhost" "$tag_dbname" || echo "Unable to access database. ABORTING..."
