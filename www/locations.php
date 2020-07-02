@@ -58,7 +58,11 @@ if ($pw != $calc) {
     $result["time"] = time();
     foreach($rows as $row) {
 	$row["image_url"] = "https://".$_SERVER["SERVER_NAME"].$dir.$row["image"].".jpg";
-	$row["icon_url"] = "https://".$_SERVER["SERVER_NAME"].$dir.$row["image"]."-icon.png";
+	if (file_exists(".$dir".$row["image"]."-icon.png"))
+	    $row["icon_url"] = "https://".$_SERVER["SERVER_NAME"].$dir.$row["image"]."-icon.png";
+	else
+	    $row["icon_url"] = "https://".$_SERVER["SERVER_NAME"]."/unknown-icon.png";
+
 	$result["rows"][] = $row;
     }
 }
