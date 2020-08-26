@@ -1,5 +1,5 @@
 # loc2mapbot
-Telegram bot to collect and display Live Locations in IITC
+Telegram bot to collect and display Live Locations in Ingress Intel Total Conversion (IITC)
 
 __Requirements__
 * A Working web server with PHP and SSL support
